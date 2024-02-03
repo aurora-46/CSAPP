@@ -166,9 +166,7 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  int y=~0x00;
-  y=(!(y^(x+x+1)))&x&(!!(y^x));
-  return y;
+  return (!((x + 1) ^ (~x))) & (!!(x ^ (~0x00)));
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -365,4 +363,3 @@ unsigned floatPower2(int x) {
     return (x+127)<<23;
 
 }
-
